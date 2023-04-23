@@ -6,7 +6,6 @@ pipeline {
           checkout scm
           def customImage = docker.build("${registry}:${env.BUILD_ID}")
         }
-
       }
     }
     stage('unit-test'){
