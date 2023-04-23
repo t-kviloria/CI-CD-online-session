@@ -20,7 +20,7 @@ pipeline {
     stage('http-test'){
       steps{
         script{
-          docker.image("${registry}:${env.BUILD_ID}"). withRun('-p 9006:9000') {c -> sh 'curl -i http://localhost:9006/test_string'}
+          docker.image("${registry}:${env.BUILD_ID}"). withRun('-p 9006:9000') {c -> sh "curl -i http://localhost:9006/test_string"}
           }
       }
     }
