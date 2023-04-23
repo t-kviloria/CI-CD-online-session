@@ -92,7 +92,7 @@ pipeline {
     }
 stage('Deploy') {
   steps{
-    sh 'docker stop flask-app || true; docker rm flask-app || true; docker run -d --name flask-app -p 9000:9000 itemo/ci-cd-online-workshop:latest'
+    sh 'docker stop ci-cd-online-workshop || true; docker rm ci-cd-online-workshop || true; docker run -d --name ci-cd-online-workshop -p 9000:9000 itemo/ci-cd-online-workshop:latest'
   }
 }
 stage('Validation') {
